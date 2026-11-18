@@ -1,0 +1,9 @@
+# Fichiers générés par MATLAB / Simulink
+*.slxc
+*.asv
+*.autosave
+slprj/
+sources/compression/
+sources/resultats_*.mat
+sources/texte_recu_*.txt
+*.mp4
