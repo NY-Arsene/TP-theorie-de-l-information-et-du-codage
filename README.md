@@ -1,8 +1,8 @@
 # Chaîne de transmission numérique en bande de base — MATLAB / Simulink
 
-ENSIM 5A ASTRE — Théorie de l'information et du codage — TP 2026-2027
-
-Auteur : **NOM Prénom** *(à compléter)*
+**Auteur : NGUENANG YOUKAP Arsène Igor**  
+ENSIM — Le Mans Université — 5A ASTRE  
+Théorie de l'information et du codage — TP 2026-2027
 
 Ce dépôt contient le rapport, les sources MATLAB et Simulink, ce guide d'utilisation,
 le lien vers la présentation et la déclaration sur l'usage de l'IA.
@@ -10,9 +10,9 @@ le lien vers la présentation et la déclaration sur l'usage de l'IA.
 ```
 TP_chaine_transmission/
 ├── README.md                 ce guide d'utilisation
-├── DECLARATION_IA.md         déclaration sur l'usage de l'IA
+├── Declaration_usage_IA.pdf  déclaration sur l'usage de l'IA
 ├── rapport/                  rapport (PDF)
-├── presentation/             lien vers la présentation vidéo
+├── presentation/             diaporama (.pptx) et lien vers la présentation vidéo
 ├── figures/                  figures produites par lancer_tout (créé à l'exécution)
 └── sources/
     ├── Parametres.m          paramètres communs (appelé par tous les scripts)
@@ -20,8 +20,7 @@ TP_chaine_transmission/
     ├── lancer_tout.m         exécute tout le TP et enregistre les figures
     ├── partie2_1.m … partie7_2.m   un script par groupe de questions
     ├── fonctions/            fonctions MATLAB (Huffman, LZ78, Hamming, RRC…)
-    ├── modeles/              fonctions qui construisent les modèles Simulink
-    └── *.slx                 modèles Simulink (générés par les scripts)
+    ├── modeles/              scripts qui construisent les modèles Simulink, et modèles .slx
 ```
 
 ## 1. Prérequis
@@ -40,9 +39,10 @@ TP_chaine_transmission/
 2. Dans `Parametres.m` :
    - `nomEtudiant` : nom exactement comme sur la liste d'appel ; il détermine les
      paramètres personnels (p1, pe, a, σ, L, α, β, τ, graine) ;
-   - `fichierTexte` : nom du texte long (≥ 100 000 caractères, UTF-8) copié dans
-     `sources/`. Nous avons utilisé *The Prince* (Projet Gutenberg) ; l'en-tête et la
-     licence Gutenberg sont retirés automatiquement par `lire_texte`.
+   - `fichierTexte` : nom du texte long (≥ 100 000 caractères, UTF-8) placé dans
+     `sources/`. Nous avons utilisé *The Prince* (Projet Gutenberg), fichier
+     `The_Project_Gutenberg_eBook_of_The.txt` ; l'en-tête et la licence Gutenberg
+     sont retirés automatiquement par `lire_texte`.
 3. Pour la partie 2.2 de test, le fichier `texte_fr.txt` fourni peut aussi être utilisé.
 
 ## 3. Exécution
@@ -80,7 +80,7 @@ pour les comparaisons.
 ## 4. Modèles Simulink
 
 Chaque modèle est **construit par un script** (`modeles/construire_modele_*.m`) avec
-`add_block` / `add_line`, puis enregistré en `.slx` dans `sources/` : il peut ensuite
+`add_block` / `add_line`, puis enregistré en `.slx` (fournis dans `sources/modeles/`) : il peut ensuite
 être ouvert et simulé à la main, à condition d'avoir lancé le script correspondant
 (qui crée les variables du workspace).
 
